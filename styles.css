@@ -4,16 +4,20 @@
   box-sizing: border-box;
 }
 :root {
-  --fondo-principal: #e85e5e;
-  --fondo-header: #872f2f;
-  --fondo-sidebar: #efbaba;
-  --fondo-main: #a27373;
-  --fondo-footer: #683838;
+  --fondo-principal: #ffffff;
+  --fondo-header: #48cdc2;
+  --fondo-sidebar: #9cf0ff;
+  --fondo-main: #f1f7f8;
+  --fondo-footer: #88b0ba;
   --alto-header: 100px;
   --alto-footer: 100px;
   --ancho-sidebar: 200px;
   --color-texto: #dadada;
+  --color-sidebar-texto: #333;
+  --color-sidebar-hover: #48cdc2;
   --box-shadow: 0 4px 8px rgba(0, 20, 169, 0.1);
+  --border-radius: 1px;
+  --padding-sidebar: 2rem;
 }
 body {
   background-color: var(--fondo-header);
@@ -33,7 +37,7 @@ header {
   align-items: center;
 }
 header div img{
-  height: 80px;
+  width:80px;
   margin-left: 20px;
 }
 
@@ -64,14 +68,43 @@ aside {
   grid-area: sidebar;
   width: var(--ancho-sidebar);
   background-color: var(--fondo-sidebar);
-  padding: 2rem;
-   border-right: 1px solid #ddd;
-   box-shadow: var(--box-shadow);
-   font-weight: bold;
-   
+  padding: var(--padding-sidebar);
+  border-right: 1px solid #ddd;
+  box-shadow: var(--box-shadow);
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  color: var(--color-sidebar-texto);
+  transition: box-shadow 0.3s;
 }
 
-aside h3 button{
+aside:hover {
+  box-shadow: 0 8px 16px rgba(0, 20, 169, 0.15);
+}
+
+aside ul li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+aside ul a {
+  text-decoration: none;
+  color: var(--color-sidebar-texto);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  display: block;
+}
+
+aside ul a:hover {
+  background: var(--color-sidebar-hover);
+  color: var(--color-texto);
+}
+
+aside h3 {
+  margin-bottom: 20px;
+}
+
+aside h3 button {
   margin-top: 20px;
   padding: 10px 15px;
   background-color: var(--fondo-header);
@@ -81,11 +114,46 @@ aside h3 button{
   cursor: pointer;
   font-weight: bold;
 }
-
 main {
   background-color: var(--fondo-main);
   grid-area: main;
 }
+
+main article
+{
+border: 1px solid #ccc;
+padding: 16px;
+margin: 10px; 
+display:inline-block;
+width: 200px;
+box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+figure
+{
+  margin: 0 0 16px 0;
+}
+
+img
+{
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+
+h3{
+  margin-top:0;
+  color: #333;
+}
+
+p{
+  color: #666;
+  font-size: 14px;
+}
+
+
+
+
 footer {
   background-color: var(--fondo-footer);
   grid-area: footer;
