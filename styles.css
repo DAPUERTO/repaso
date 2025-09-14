@@ -121,7 +121,7 @@ main {
 
 main article
 {
-border: 1px solid #ccc;
+border: 1px solid var(--color-texto);
 padding: 16px;
 margin: 10px; 
 display:inline-block;
@@ -155,6 +155,79 @@ p{
 
 
 footer {
-  background-color: var(--fondo-footer);
-  grid-area: footer;
+    background-color: var(--color-footer);
+    grid-area: footer;
+    padding: 40px 20px 20px;
+    color: var(--color-texto);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+}
+
+footer h3 {
+    color: var(--color-texto);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+footer h4 {
+    color: var(--color-texto);
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+footer p {
+    color: var(--color-texto);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+
+footer ul li a {
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: var(--color-texto);
+}
+
+footer div div {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+footer div div a {
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+footer div div a:hover {
+    transform: scale(1.1);
+}
+
+footer > p {
+    grid-column: 1 / -1;
+    border-top: 1px solid #555;
+    margin-top: 20px;
+    padding-top: 15px;
+    text-align: center;
+    color: var(--color-texto);
 }
